@@ -12,13 +12,16 @@ import { Typography } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
 	fab: {
 		position: "fixed",
-		right: 350,
+		right: 290,
 		bottom: 50,
 	},
 	button: {
 		position: "absolute",
 		right: 5,
 		bottom: 25,
+	},
+	add_popup: {
+		minWidth: "350px",
 	},
 }));
 
@@ -46,7 +49,11 @@ export const AddButton = ({ refetch }) => {
 					<AddIcon />
 				</Fab>
 			</div>
-			<PopUp openPopup={openPopup} setOpenPopup={setOpenPopup}>
+			<PopUp
+				openPopup={openPopup}
+				setOpenPopup={setOpenPopup}
+				css={classes.add_popup}
+			>
 				<Typography variant="h5">Add a New Word</Typography>
 				<TextField
 					autoFocus

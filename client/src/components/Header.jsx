@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	title: {
 		flexGrow: 1,
-		display: "none",
+		marginRight: theme.spacing(2),
 		[theme.breakpoints.up("sm")]: {
 			display: "block",
 		},
@@ -25,9 +25,10 @@ const useStyles = makeStyles((theme) => ({
 			backgroundColor: fade(theme.palette.common.white, 0.25),
 		},
 		marginLeft: 0,
-		width: "100%",
+		marginRight: 10,
 		[theme.breakpoints.up("sm")]: {
 			marginLeft: theme.spacing(1),
+			marginRight: theme.spacing(1),
 			width: "auto",
 		},
 	},
@@ -49,12 +50,12 @@ const useStyles = makeStyles((theme) => ({
 		paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
 		transition: theme.transitions.create("width"),
 		width: "100%",
-		[theme.breakpoints.up("sm")]: {
-			width: "12ch",
-			"&:focus": {
-				width: "20ch",
-			},
-		},
+		// [theme.breakpoints.up("sm")]: {
+		// 	width: "12ch",
+		// 	"&:focus": {
+		// 		width: "20ch",
+		// 	},
+		// },
 	},
 }));
 
@@ -65,8 +66,8 @@ export const Header = ({ setSearch }) => {
 		<div className={classes.root}>
 			<AppBar position="static">
 				<Toolbar>
-					<Typography className={classes.title} variant="h4" noWrap>
-						Vocabulary app
+					<Typography className={classes.title} variant="h4">
+						Vocab
 					</Typography>
 					<div className={classes.search}>
 						<div className={classes.searchIcon}>

@@ -5,10 +5,11 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
 	root: {
 		minWidth: "350px",
+		overflow: "scroll",
 	},
 });
 
-export const PopUp = ({ title, children, openPopup, setOpenPopup }) => {
+export const PopUp = ({ title, children, openPopup, setOpenPopup, css }) => {
 	const classes = useStyles();
 
 	const handleClose = () => {
@@ -16,7 +17,7 @@ export const PopUp = ({ title, children, openPopup, setOpenPopup }) => {
 	};
 	return (
 		<Dialog open={openPopup} onClose={handleClose} maxWidth="lg">
-			<Card className={classes.root}>
+			<Card className={css ? css : classes.root}>
 				<CardContent>
 					{title && (
 						<>

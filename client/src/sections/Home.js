@@ -29,7 +29,7 @@ export const Home = () => {
 	const { data, loading, error, refetch } = useQuery(GET_ALL_WORDS);
 	const [
 		getWordDetails,
-		{ data: getWordData, loading: getWordDataLoading, error: getWordDataError },
+		{ data: getWordData, error: getWordDataError },
 	] = useMutation(GET_WORD_DATA);
 
 	const [search, setSearch] = useState("");
@@ -81,7 +81,6 @@ export const Home = () => {
 			<PopUp
 				openPopup={openPopup}
 				setOpenPopup={setOpenPopup}
-				className={{ root: classes.root }}
 				title={wordData && wordData[0].word}
 			>
 				{wordData
